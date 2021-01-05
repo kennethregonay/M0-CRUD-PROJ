@@ -25,7 +25,7 @@ nav {
 .nav-links{
     display: flex;
     justify-content: space-around;
-    width: 40%;
+    width: 50%;
     justify-content: space-between;
 }
 .nav-links li {
@@ -71,7 +71,7 @@ font-family: 'Red Rose', cursive;
   min-height: 500px;
   padding: 20px;
   width: 80%;
-  margin-top: -5px;
+  margin-top: 5px;
   overflow: hidden;
 }
 /*form Designs
@@ -90,7 +90,6 @@ font-family: 'Red Rose', cursive;
     text-transform: uppercase;
     text-align: center;
 }
-
 .wrapper .form {
      width: auto;
 }
@@ -99,13 +98,11 @@ font-family: 'Red Rose', cursive;
     display: flex;
     align-items: center;
 }
-
 .wrapper .form .inputfield input {
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-family: 'Red Rose', cursive;
     font-size: small;
-    color: #24254c
-;
+    color: #24254c;
 }
 .wrapper .form .inputfield label{
    width: 200px;
@@ -122,12 +119,10 @@ font-family: 'Red Rose', cursive;
   padding: 8px 10px;
   border-radius: 3px;
   transition: all 0.3s ease;
-}
-.wrapper .form .inputfield .textarea{
-  width: 100%;
   height: 50px;
   resize: none;
 }
+
 .wrapper .form .inputfield .custom_select{
   position: relative;
   width: 100%;
@@ -229,13 +224,11 @@ font-family: 'Red Rose', cursive;
     color:tomato;
 }
 fieldset{
-    padding: 30px; 
+    padding: 15px; 
 }
 
 /*Table Design*/
-table {
-    width: 100%;
-}
+
 
 
 
