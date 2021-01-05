@@ -32,38 +32,38 @@
 
 <div class="content">
 <div class="wrapper">
+  <fieldset>
     <div class="title">
       Employee Information
     </div>
-
     <div class="form">
         <div class="inputfield">
           <label>Employee ID</label>
-          <input type="number" class="input">
+          <input type="number" class="input" readonly>
        </div>
         <div class="inputfield">
           <label>First Name</label>
-          <input type="text" class="input">
+          <input type="text" class="input" required>
        </div>  
         <div class="inputfield">
           <label>Middle Name</label>
-          <input type="text" class="input">
+          <input type="text" class="input" required>
        </div>  
        <div class="inputfield">
           <label>Last Name</label>
-          <input type="text" class="input">
+          <input type="text" class="input" required>
        </div>  
       <div class="inputfield">
           <label>Address</label>
-          <textarea class="textarea"></textarea>
+          <textarea class="textarea" required></textarea>
        </div> 
         <div class="inputfield">
           <label>Gender</label>
           <div class="custom_select">
-            <select>
-              <option value="">Select</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
+            <select required>
+              <option value="">SELECT</option>
+              <option value="male">MALE</option>
+              <option value="female">FEMALE</option>
             </select>
           </div>
        </div> 
@@ -98,7 +98,30 @@
       </div>
     </div>
     </div>
-</div>	
+    </fieldset>
+</div>
+
+<div class="table-form">
+  
+<table>
+  <thead>
+ <tr>
+ <th>Employee ID</th>
+  <th>First Name</th>
+ <th>Middle Name</th>
+ <th>Last Name</th>
+ <th>Address</th>
+ <th>Gender</th>
+ <th>Birth Date</th>
+ <th>Position Code</th>
+</tr>
+ </thead>
+ <tbody>
+
+  
+ </tbody>
+  </table>
+  </div>
 </div>
 
 
