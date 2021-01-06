@@ -18,11 +18,12 @@
         $connection->query("INSERT INTO employee(Firstname,Middlename,Lastname,Address,Gender,Birthdate,Position_Code) 
         VALUES ('$fname','$mname','$lname','$address','$gender','$bdate','$poscode')")
         or die ($connection->error);
+       }else if (isset($_POST['read'])){
+
        }
       
     function prompt ($class){
-        $element = "<h6 class = '$class'>Successfully Added</h6>";
+       return $element = "<h6 class = '$class'>Successfully Added</h6>";
     }
-       mysqli_close($connection);
 
 ?> 
