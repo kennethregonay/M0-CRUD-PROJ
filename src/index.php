@@ -1,4 +1,12 @@
-<?php require_once 'backend.php'?>
+<?php 
+include 'backend.php';
+$query = "SELECT * FROM employee";
+
+$result_set = $connection->query($query);
+
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,14 +38,11 @@
         <div class="line2"></div>
         <div class="line3"></div>
 </nav>
-
-<div class="content">
 <div class="wrapper">
-  <fieldset>
+  <fieldset class="field">
     <div class="title">
       Employee Information
     </div>
-    
     <div class="form" >
       <form  method="POST">
         <div class="inputfield">
@@ -68,7 +73,8 @@
        </div> 
         <div class="inputfield">
           <label>BirthDate</label>
-          <input type="date" class="input" required name="bdate">
+          <input type="date" class="input" required name="bdate" id="mydate"
+          value="2021-12-27">
        </div> 
       <div class="inputfield">
           <label>Position Code</label>
@@ -101,14 +107,7 @@
     </fieldset>
 </div>
 
-
-
-
-
-
-  
-<div class="table-form">
-
+<div class="content">
   <table class= table> 
 <thead>
   <tr>
@@ -117,31 +116,31 @@
     <th>Last Name</th>
     <th>Address</th>
     <th>Gender</th>
-    <th>Birthdate</th>
+    <th>BirthDate</th>
     <th>Position_Code</th>
   </tr>
 </thead>
-<?php
-  $conn = new mysqli('localhost','root', '' , 'hris')
-  or die (mysqli_error($conn));
-  $query ="SELECT * FROM employee";
-  $result = mysqli_query($conn,$query);
-
-  while($data = mysqli_fetch_assoc($result))?>
-    <tr>
-      <td><?php echo $data ['Firstname'] ?></td>
-      <td><?php echo $data ['mname'] ?></td>
-      <td><?php echo $data ['lname'] ?></td>
-      <td><?php echo $data ['fname'] ?></td>
-      <td><?php echo $data ['fname'] ?></td>
-      <td><?php echo $data ['fname'] ?></td>
-      <td><?php echo $data ['fname'] ?></td>
+<tbody>  
+ <tr>
+ <?php
+			if ($result_set->num_rows > 0) {
+				//output data of each row
+				while ($row = $result_set->fetch_assoc()) {
+		?>
+      <td><?php echo $row ['Firstname']; ?></td>
+      <td><?php echo $row ['Middlename']; ?></td>
+      <td><?php echo $row ['Lastname']; ?></td>
+      <td><?php echo $row ['Address']; ?></td>
+      <td><?php echo $row ['Gender']; ?></td>
+      <td><?php echo $row ['Birthdate']; ?></td>
+      <td><?php echo $row ['Position_Code']; ?></td>
     </tr>
+    <?php }
+      }
+    ?>
+    </tbody>
 </table>
-  
 </div>
-</div>
-
 
 
 
